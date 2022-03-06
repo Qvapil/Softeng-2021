@@ -1,8 +1,8 @@
 # database
 
-Περιεχόμενα:
+Contents:
 
-Τα tables της βάσης δεδομένων της εφαρμογής μας σε mysql.
+An sql file to create the tables for our mysql database.
 
-Πριν την εκτέλεση του αρχείου θα πρέπει να προηγηθεί η εντολή `create database tolltag` στο τερματικο.
+First run `create database tolltag` to create the database.
 
