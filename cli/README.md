@@ -1,45 +1,42 @@
 # CLI 
 
-Περιεχόμενα:
+Contents:
 
 - Command line interface (CLI)
 - Set-up
-- Εντολές
-- Έλεγχος
+- Commands
+- Tests
 
 ----------------------------------------
 ## Command Line Interface (CLI)
 
-Μέσω αυτού του Command Line Interface ο χρήστης έχει τη δυνατότητα να εκτελεί λειτουργίες προσπέλασης των δεδομένων. Η εφαρμογή λειτουργεί ως client του REST API και υποστηρίζει τον μορφότυπο json και csv.
-
-Η κλήση του γίνεται μέσω γραμμής εντολών.
+With our Command Line Interface the user may run console commands to access the data. The application works as a client of our REST API and supports json as well as csv.
 
 ---------------------------------------
 ## Set-up
 
-Ανοίγουμε ένα command line prompt και μεταβαίνουμε στο φάκελο
-που περιέχει όλα τα απαραίτητα αρχεία για το CLI (cli).
+Open a command line prompt and go to this directory.
 
-Εγκαθιστούμε το CLI δίνοντας την εντολή:
+Set up CLI using the following command:
 
  `pip install --editable .`
 
-Ουσιαστικά εκτελείται το *setup.py* δημιουργώντας ένα CLI με όνομα se2147.
-Το αρχείο *se2147.py* περιέχει τον κώδικα για όλες τις εντολές.
+This command runs *setup.py* creating a CLI called se2147.
+The file *se2147.py* has the code for each command.
 
 ----------------------------------------
-## Εντολές
+## Commands
 
-Γενική μορφή:
+General template:
 
 `se2147 [COMMAND] --param1 value1  [--param2 value2 ...] --format fff`
 
-Μέσω της εντολής `se2147 --help` εμφανίζεται μια λίστα με όλες τις εντολές που υποστηρίζονται και μέσω της εντολής
-`se2147 [COMMAND] --help` παρέχονται για την εκάστοτε εντολή οι πληροφορίες σχετικά με τη λειτουργία της και τις απαραίτητες παραμέτρους που πρέπει να δοθούν.
+Running `se2147 --help` displays a list of all available commands, and running
+`se2147 [COMMAND] --help` displays information about each command and its parameters.
 
 
-ΣΗΜΕΙΩΣΗ: Για την ενολή διαχείρισης admin με παραμέτρους --passesupd και --source, η παράμετρος source δέχεται ως τιμη ένα αρχείο csv. Ανάλογα με το αν στο αρχείο αυτό χρησιμοποιείται για το διαχωρισμό κομμα (" , ") ή ελληνικό ερωτηματικό (" ; "), θα πρέπει να χρησιμοποιηθεί η αντίστοιχη εντολή για το διάβασμά του και η άλλη να τεθεί ως σχόλιο ("passes = csv.reader(f)" για το "," και "passes = csv.reader(f, delimiter=" ; ")" για το " ; ").
+Note: For the admin endpoint with parameters --passesupd and --source, the source parameter takes a csv file. Depending on whether said file uses commas (",") or semicolons (";") as separators, use the corresponding command and place the other in a comment ("passes = csv.reader(f)" for "," or "passes = csv.reader(f, delimiter=" ; ")" for " ; ").
 
 -----------------------------------------
-## Έλεγχος
-Το testing του CLI γίνεται μέσω του αρχείου cli_test.py, το οποίο περιέχει αυτοματοποιημένους ελέγχους σε python3 και βρίσκεται στον φάκελο cli.
+## Testing
+File cli_test.py contains automated tests for the CLI written in python.
