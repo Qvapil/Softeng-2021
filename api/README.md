@@ -1,15 +1,15 @@
 # API
 
-Περιεχόμενα:
+Contents:
 
 - RESTful API
 
-Το API είναι υλοποιημένο σε nodejs με express και ξεκινάει να τρέχει με την εντολή `npm start` ή `node index.js`. Αν δεν λειτουργεί τότε όλα τα requests αποτυγχάνουν. Πρέπει να είναι εγκατεστημένο το nodejs.
+The API is written in nodejs, express and starts running with the command `npm start`.
 
-Βασικό αρχείο είναι το *index.js* όπου ξεκινάει την εφαρμογή στη θύρα **9103** και συνδέεται με όλα τα endpoints.
+Main file is *index.js* which starts the application on port **9103** and connects to all endpoints.
 
-Η σύνδεση με τη βάση γίνεται από το αρχείο *connect.js* θεωρώντας ότι υπάρχει χρήστης με όνομα `user` και κενό κωδικό ο οποίος έχει τα απαραίτητα privileges στη βάση `tolltag`. Σε περίπτωση διαφορετικού χρήστη να τροποποιηθεί το αρχείο αυτό.
+Connection with the database is done through the file *connect.js* using username `user` and blank password on the database `tolltag`.
 
-Στο φάκελο *endpoints* υπάρχουν τα αρχεία για όλα τα endpoints, και στον υποφάκελο *endpoints/admin* υπάρχουν τα αρχεία για τα διαχειριστικά endpoints.
+In folder *endpoints* is the code for each endpoint, while child folder *endpoints/admin* contains the code for administrative endpoints.
 
-Το documentation για όλα τα endpoints είναι στο αρχείο *tolltag.postman_collection.json* σε μορφή postman collection.
+Documentation for all endpoints can be found in the file *tolltag.postman_collection.json*.
