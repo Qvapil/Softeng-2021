@@ -1,17 +1,15 @@
 # Back-end
 
-Περιεχόμενα:
+Contents:
 
-Ένα πρόγραμμα σε python για το πέρασμα των δεδομένων από τα csv αρχεία στη βάση. 
+A python program to reset the database and fill it with the data from folder *Sample_data*.
 
-Τα csv βρίσκονται στο φάκελο *Sample Data*
-
-Για την σύνδεση στην βάση χρησιμοποιούμε 
+To connect with the database we use the following parameters:
 
     host = 'localhost'
 
-    user(Όνομα χρήστη) = 'user'
+    user = 'user'
   
-    password(Κωδικός χρήστη) = ''
+    password = ''
   
-    db(Όνομα της βάσης) = 'tolltag'
+    db = 'tolltag'
