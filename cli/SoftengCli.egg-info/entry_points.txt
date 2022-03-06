@@ -1,0 +1,3 @@
+[console_scripts]
+se2147 = se2147:cli
+

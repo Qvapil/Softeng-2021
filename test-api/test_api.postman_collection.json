@@ -1,0 +1,702 @@
+{
+	"info": {
+		"_postman_id": "5eacd734-8067-4b54-95ca-478212de1d45",
+		"name": "test_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test PassesPerStation",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Check number of passes\", () => {\r",
+									"    pm.expect(jsonData[0].NumberOfPasses).to.eq(7);\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[0].PassID).to.eql(\"FNW1817015\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[1].PassID).to.eql(\"SBD6026250\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[2].PassID).to.eql(\"SMZ7151735\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[3].PassID).to.eql(\"TDF6930764\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[4].PassID).to.eql(\"VYS1216734\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[5].PassID).to.eql(\"ZVC9278425\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[6].PassID).to.eql(\"ZXR5575054\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesPerStation/AO01/20211101/20211201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesPerStation",
+								"AO01",
+								"20211101",
+								"20211201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Check number of passes\", () => {\r",
+									"    pm.expect(jsonData[0].NumberOfPasses).to.eq(12);\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[0].PassID).to.eql(\"FNG2316391\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[1].PassID).to.eql(\"KEY5828236\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[2].PassID).to.eql(\"KNV3754849\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[3].PassID).to.eql(\"KZN1435781\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[4].PassID).to.eql(\"PFA6669685\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[5].PassID).to.eql(\"PPR1657757\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[6].PassID).to.eql(\"THL1330966\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[7].PassID).to.eql(\"UFX6456376\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[8].PassID).to.eql(\"UGB3116277\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[9].PassID).to.eql(\"UKF3560392\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[10].PassID).to.eql(\"UPW7011840\");\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[11].PassID).to.eql(\"ZAH3895819\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesPerStation/EG10/20211001/20211101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesPerStation",
+								"EG10",
+								"20211001",
+								"20211101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Check number of passes\", () => {\r",
+									"    pm.expect(jsonData[0].NumberOfPasses).to.eq(1);\r",
+									"});\r",
+									"pm.test(\"Check passID\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[0].PassID).to.eql(\"HKM4715398\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesPerStation/NE05/20210623/20210703",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesPerStation",
+								"NE05",
+								"20210623",
+								"20210703"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check number of passes\",  () => {\r",
+									"  var jsonData = pm.response.json(); \r",
+									"  pm.expect(jsonData.statust)==\"No data\";\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesPerStation/OO00/20210630/20210701",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesPerStation",
+								"OO00",
+								"20210630",
+								"20210701"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test PassesAnalysis",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Check number of passes\", () => {\r",
+									"    pm.expect(jsonData[0].NumberOfPasses).to.eq(5);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check passID, stationID and charge\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[0].PassID).to.eql(\"AEW7495447\");\r",
+									"    pm.expect(jsonData[0].PassesList[0].StationID).to.eql(\"AO12\");\r",
+									"    pm.expect(jsonData[0].PassesList[0].Charge).to.eql(2.8);\r",
+									"});\r",
+									"pm.test(\"Check passID, stationID and charge\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[1].PassID).to.eql(\"XCD3167378\");\r",
+									"    pm.expect(jsonData[0].PassesList[1].StationID).to.eql(\"AO07\");\r",
+									"    pm.expect(jsonData[0].PassesList[1].Charge).to.eql(2.8);\r",
+									"});\r",
+									"pm.test(\"Check passID, stationID and charge\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[2].PassID).to.eql(\"OQZ0564616\");\r",
+									"    pm.expect(jsonData[0].PassesList[2].StationID).to.eql(\"AO18\");\r",
+									"    pm.expect(jsonData[0].PassesList[2].Charge).to.eql(2.8);\r",
+									"});\r",
+									"pm.test(\"Check passID, stationID and charge\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[3].PassID).to.eql(\"KSK4108960\");\r",
+									"    pm.expect(jsonData[0].PassesList[3].StationID).to.eql(\"AO18\");\r",
+									"    pm.expect(jsonData[0].PassesList[3].Charge).to.eql(2.8);\r",
+									"});\r",
+									"pm.test(\"Check passID, stationID and charge\",  () => { \r",
+									"    pm.expect(jsonData[0].PassesList[4].PassID).to.eql(\"KZI8070958\");\r",
+									"    pm.expect(jsonData[0].PassesList[4].StationID).to.eql(\"AO01\");\r",
+									"    pm.expect(jsonData[0].PassesList[4].Charge).to.eql(2.8);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesAnalysis/aodos/egnatia/20210101/20210201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesAnalysis",
+								"aodos",
+								"egnatia",
+								"20210101",
+								"20210201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesAnalysis/olympia_odos/aodos/20200101/20210201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesAnalysis",
+								"olympia_odos",
+								"aodos",
+								"20200101",
+								"20210201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check number of passes\",  () => {\r",
+									"  var jsonData = pm.response.json(); \r",
+									"  pm.expect(jsonData.statust)==\"No data\";\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesAnalysis/nea_odos/kentriki_odos/20201201/20201201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesAnalysis",
+								"nea_odos",
+								"kentriki_odos",
+								"20201201",
+								"20201201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test PassesCost",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json(); \r",
+									"  pm.expect(jsonData.PassesCost)==22.4;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesCost/aodos/egnatia/20190101/20190201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesCost",
+								"aodos",
+								"egnatia",
+								"20190101",
+								"20190201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json(); \r",
+									"  pm.expect(jsonData.PassesCost)==6.25;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesCost/egnatia/kentriki_odos/20210101/20210201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesCost",
+								"egnatia",
+								"kentriki_odos",
+								"20210101",
+								"20210201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json(); \r",
+									"  pm.expect(jsonData.statust)==\"No data\";\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/PassesCost/olympia_odos/aodos/20200101/20200201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"PassesCost",
+								"olympia_odos",
+								"aodos",
+								"20200101",
+								"20200201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test ChargesBy",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[0].VisitingOperator).to.eql(\"nea_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[0].PassesCost).to.eql(14);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[1].VisitingOperator).to.eql(\"gefyra\"); \r",
+									"  pm.expect(jsonData[0].PPOList[1].PassesCost).to.eql(28);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[2].VisitingOperator).to.eql(\"kentriki_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[2].PassesCost).to.eql(30.8);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[3].VisitingOperator).to.eql(\"egnatia\"); \r",
+									"  pm.expect(jsonData[0].PPOList[3].PassesCost).to.eql(14);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[4].VisitingOperator).to.eql(\"olympia_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[4].PassesCost).to.eql(19.6);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[5].VisitingOperator).to.eql(\"moreas\"); \r",
+									"  pm.expect(jsonData[0].PPOList[5].PassesCost).to.eql(36.4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/ChargesBy/aodos/20210101/20210201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"ChargesBy",
+								"aodos",
+								"20210101",
+								"20210201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[0].VisitingOperator).to.eql(\"olympia_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[0].PassesCost).to.eql(7.1);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[1].VisitingOperator).to.eql(\"moreas\"); \r",
+									"  pm.expect(jsonData[0].PPOList[1].PassesCost).to.eql(9.85);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[2].VisitingOperator).to.eql(\"aodos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[2].PassesCost).to.eql(10.8);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[3].VisitingOperator).to.eql(\"nea_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[3].PassesCost).to.eql(14.75);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[4].VisitingOperator).to.eql(\"kentriki_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[4].PassesCost).to.eql(7.2);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[5].VisitingOperator).to.eql(\"gefyra\"); \r",
+									"  pm.expect(jsonData[0].PPOList[5].PassesCost).to.eql(5.1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/ChargesBy/egnatia/20210201/20210301",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"ChargesBy",
+								"egnatia",
+								"20210201",
+								"20210301"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[0].VisitingOperator).to.eql(\"kentriki_odos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[0].PassesCost).to.eql(4.25);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[1].VisitingOperator).to.eql(\"aodos\"); \r",
+									"  pm.expect(jsonData[0].PPOList[1].PassesCost).to.eql(5.8);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[2].VisitingOperator).to.eql(\"gefyra\"); \r",
+									"  pm.expect(jsonData[0].PPOList[2].PassesCost).to.eql(4.95);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[3].VisitingOperator).to.eql(\"egnatia\"); \r",
+									"  pm.expect(jsonData[0].PPOList[3].PassesCost).to.eql(3.1);\r",
+									"});\r",
+									"pm.test(\"Check visiting operator and passes cost\",  () => {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0].PPOList[4].VisitingOperator).to.eql(\"moreas\"); \r",
+									"  pm.expect(jsonData[0].PPOList[4].PassesCost).to.eql(2.2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/interoperability/api/ChargesBy/nea_odos/20211101/20211201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"interoperability",
+								"api",
+								"ChargesBy",
+								"nea_odos",
+								"20211101",
+								"20211201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

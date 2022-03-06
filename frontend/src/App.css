@@ -1,0 +1,46 @@
+body {
+    background-color: #1c1b20;
+    color: white;
+    padding: 40px;
+    font-family: "Courier New";
+    font-weight: bold;
+    text-align: center;
+  }
+
+.App {
+    justify-content: center;
+    align-items: center;
+}
+
+.app-header{
+    padding: 40px;
+}
+
+.nav-bar {
+    padding: 40px;
+}
+
+.select-multi{
+    color: black;
+    padding: 40px;
+}
+
+.dropdown {
+    padding: 40px;
+}
+
+.pass-date{
+    padding: 40px;
+}
+
+.charge-date
+{
+    padding: 40px;
+}
+
+.tolltag
+{
+    padding: 40px;
+    color: rgb(220, 235, 12);
+    font-family: "Brush Script MT";
+}

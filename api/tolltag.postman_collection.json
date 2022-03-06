@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "9d7d6a42-ccdf-410b-ad58-1b65acbb3d49",
+		"name": "tolltag",
+		"description": "Requests for all endpoints of tolltag API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/admin/healthcheck",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"admin",
+						"healthcheck"
+					]
+				},
+				"description": "Admin GET request that checks connection with database.\n\nReturns:  \njson object {\"status\":\"OK\",\"dbconnection\":\"*connection string*\"} if ping succeeds  \njson object {\"status\":\"failed\",\"dbconnection\":\"*connection string*\"} if ping fails"
+			},
+			"response": []
+		},
+		{
+			"name": "resetpasses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/admin/resetpasses",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"admin",
+						"resetpasses"
+					]
+				},
+				"description": "Admin POST request that deletes all pass records from database.\n\nReturns:  \njson object {\"status\":\"OK\"} if reset succeeds  \njson object {\"status\":\"failed\"} if reset fails"
+			},
+			"response": []
+		},
+		{
+			"name": "resetstations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/admin/resetstations",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"admin",
+						"resetstations"
+					]
+				},
+				"description": "Admin POST request that deletes all station and owns records from database and enters sample data.\n\nReturns:  \njson object {\"status\":\"OK\"} if reset succeeds  \njson object {\"status\":\"failed\"} if reset fails"
+			},
+			"response": []
+		},
+		{
+			"name": "resetvehicles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/admin/resetvehicles",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"admin",
+						"resetvehicles"
+					]
+				},
+				"description": "Admin POST request that deletes all vehicle and tag records from database and enters sample data. All passes are also deleted, without re-entry of data.\n\nReturns:  \njson object {\"status\":\"OK\"} if reset succeeds  \njson object {\"status\":\"failed\"} if reset fails"
+			},
+			"response": []
+		},
+		{
+			"name": "PassesPerStation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/PassesPerStation/{{station}}/{{date1}}/{{date2}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"PassesPerStation",
+						"{{station}}",
+						"{{date1}}",
+						"{{date2}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv",
+							"description": "result in json (default) or csv",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET request.\n\n**Path parameters:** *stationID*, *date_from*, *date_to*  \nDates in path must be in form YYYYMMDD.\n\nReturns information about all passes from station *station_id* between *date_from* and *date_to.*\n\n**Return data:** json or csv according to query parameter *format*\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| Station | String | station ID (path parameter *stationID*) |\n| StationOperator | String | operator of station |\n| RequestTimestamp | String | timestamp of request |\n| PeriodFrom | String | starting date (path parameter *date_from*) |\n| PeriodTo | String | starting date (path parameter *date_to*) |\n| NumberOfPasses | Integer | number of passes from the station between the two dates |\n| PassesList | List | details about each pass |\n\n**PassesList**: json or csv array (according to query parameter *format*) with *#NumberOfPasses* rows.  \nEach row has the following columns:\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| PassIndex | Integer | increasing index |\n| PassID | String | pass ID |\n| PassTimeStamp | String | timestamp of pass |\n| VehicleID | String | vehicle ID |\n| TagProvider | String | provider of vehicle's tag |\n| PassType | String | \"home\" if *TagProvider* is the same as *StationOperator*, else \"visitor\" |\n| PassCharge | Float | cost of pass |"
+			},
+			"response": []
+		},
+		{
+			"name": "PassesAnalysis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/PassesAnalysis/{{provider1}}/{{provider2}}/{{date1}}/{{date2}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"PassesAnalysis",
+						"{{provider1}}",
+						"{{provider2}}",
+						"{{date1}}",
+						"{{date2}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv",
+							"description": "result in json (default) or csv",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET request.\n\n**Path parameters:** *op1_ID, op2_ID*, *date_from*, *date_to*  \nDates in path must be in form YYYYMMDD.\n\nReturns information about all passes at stations belonging to operator *op1_ID* from vehicles with tags from operator *op2_ID* between *date_from* and *date_to.*\n\n**Return data:** json or csv according to query parameter *format*\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| op1_ID | String | operator of station (path parameter *op1_ID*) |\n| op2_ID | String | operator of tag (path parameter *op2_ID*) |\n| RequestTimestamp | String | timestamp of request |\n| PeriodFrom | String | starting date (path parameter *date_from*) |\n| PeriodTo | String | starting date (path parameter *date_to*) |\n| NumberOfPasses | Integer | number of passes at stations belonging to operator *op1_ID* from vehicles with tags from operator *op2_ID* between the two dates |\n| PassesList | List | details about each pass |\n\n**PassesList**: json or csv array (according to query parameter *format*) with *#NumberOfPasses* rows.  \nEach row has the following columns:\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| PassIndex | Integer | increasing index |\n| PassID | String | pass ID |\n| StationID | String | station ID of pass |\n| PassTimeStamp | String | timestamp of pass |\n| VehicleID | String | vehicle ID |\n| PassCharge | Float | cost of pass |"
+			},
+			"response": []
+		},
+		{
+			"name": "PassesCost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/PassesCost/{{provider1}}/{{provider2}}/{{date1}}/{{date2}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"PassesCost",
+						"{{provider1}}",
+						"{{provider2}}",
+						"{{date1}}",
+						"{{date2}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv",
+							"description": "result in json (default) or csv",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET request.\n\n**Path parameters:** *op1_ID, op2_ID*, *date_from*, *date_to*  \nDates in path must be in form YYYYMMDD.\n\nReturns the number of passes at stations belonging to operator *op1_ID* from vehicles with tags from operator *op2_ID* between *date_from* and *date_to*, as well as the total cost.  \nThis cost is the amount that *op2_ID* owes *op1_ID* for given time period.\n\n**Return data:** json or csv according to query parameter *format*\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| op1_ID | String | operator of station (path parameter *op1_ID*) |\n| op2_ID | String | operator of tag (path parameter *op2_ID*) |\n| RequestTimestamp | String | timestamp of request |\n| PeriodFrom | String | starting date (path parameter *date_from*) |\n| PeriodTo | String | starting date (path parameter *date_to*) |\n| NumberOfPasses | Integer | number of passes at stations belonging to operator *op1_ID* from vehicles with tags from operator *op2_ID* between the two dates |\n| PassesCost | Float | total cost of all *#NumberOfPasses* passes |"
+			},
+			"response": []
+		},
+		{
+			"name": "ChargesBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/ChargesBy/{{provider1}}/{{date1}}/{{date2}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"ChargesBy",
+						"{{provider1}}",
+						"{{date1}}",
+						"{{date2}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv",
+							"description": "result in json (default) or csv",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET request.\n\n**Path parameters:** *op_ID*, *date_from*, *date_to*  \nDates in path must be in form YYYYMMDD.\n\nReturns number of passes at stations belonging to operator *op_ID* from vehicles with tags from other operators between *date_from* and *date_to,* as well as their cost.  \nSaid cost is the total amount that each operator owes *op_ID* for the given time period\n\n**Return data:** json or csv according to query parameter *format*\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| op_ID | String | home operator |\n| RequestTimestamp | String | timestamp of request |\n| PeriodFrom | String | starting date (path parameter *date_from*) |\n| PeriodTo | String | starting date (path parameter *date_to*) |\n| PPOList | List | details about each operator |\n\n**PPOList**: json or csv array (according to query parameter *format*).  \nNumber of rows is equal to the number of different operators whose tags passed from stations of *op_ID* in given time period.  \nEach row has the following columns:\n\n| **Field** | **Type** | **Description** |\n| --- | --- | --- |\n| VisitingOperator | String | visiting operator |\n| NumberOfPasses | Integer | number of passes from vehicles with tags from visiting operator |\n| PassesCost | Float | cost that visiting operator owes home operator for given time period |"
+			},
+			"response": []
+		},
+		{
+			"name": "passUpdate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/admin/passUpdate/{{pass_ID}}/{{vehicle}}/{{station}}/{{datetime}}/{{euros}}/{{cents}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"admin",
+						"passUpdate",
+						"{{pass_ID}}",
+						"{{vehicle}}",
+						"{{station}}",
+						"{{datetime}}",
+						"{{euros}}",
+						"{{cents}}"
+					]
+				},
+				"description": "Admin POST request that inserts into database the pass specified by the following parameters.\n\n**Path parameters:** *pass_ID*, *vehicle_ID*, *station_ID, timestamp, euros, cents*  \n*Timestamp* in path must be in form YYYYMMDDHHMMSS.  \n*Euros* must be a positive number and *cents* must be between 0 and 99.  \n\nReturns:  \njson object {\"status\":\"OK\"} if insert succeeds  \njson object {\"status\":\"failed\"} if insert fails"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost"
+		},
+		{
+			"key": "baseurl",
+			"value": "interoperability/api"
+		},
+		{
+			"key": "station",
+			"value": "KO01"
+		},
+		{
+			"key": "date1",
+			"value": "20210110"
+		},
+		{
+			"key": "date2",
+			"value": "20210320"
+		},
+		{
+			"key": "provider1",
+			"value": "aodos"
+		},
+		{
+			"key": "provider2",
+			"value": "egnatia"
+		},
+		{
+			"key": "pass_ID",
+			"value": "TEST939424"
+		},
+		{
+			"key": "vehicle",
+			"value": "RK48BOP88344"
+		},
+		{
+			"key": "datetime",
+			"value": "20210612101200"
+		},
+		{
+			"key": "cents",
+			"value": "15"
+		},
+		{
+			"key": "euros",
+			"value": "2"
+		}
+	]
+}

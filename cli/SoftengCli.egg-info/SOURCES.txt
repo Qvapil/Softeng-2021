@@ -1,0 +1,9 @@
+README.md
+se2147.py
+setup.py
+SoftengCli.egg-info/PKG-INFO
+SoftengCli.egg-info/SOURCES.txt
+SoftengCli.egg-info/dependency_links.txt
+SoftengCli.egg-info/entry_points.txt
+SoftengCli.egg-info/requires.txt
+SoftengCli.egg-info/top_level.txt
